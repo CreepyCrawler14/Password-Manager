@@ -5,7 +5,7 @@ apt update && upgrade
 
 apt install git -y
 
-git clone https://github.com/CreepyCrawler14/Password-Checker.git
+git clone https://github.com/CreepyCrawler14/Password-Manager.git
 
 apt install pip -y
 
