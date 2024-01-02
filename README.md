@@ -6,7 +6,7 @@ But self hosting a password manager eliminates this threat.
 Not to mention this manager generates super secure passwords, just try it once and you'll see what we mean.
 Run all of the commands below in a linux terminal adding sudo permissions where required.
 # How To Run
-apt update && upgrade
+apt update
 
 apt install git -y
 
