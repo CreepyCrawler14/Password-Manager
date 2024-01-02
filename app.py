@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import sys
 import random
 import string
@@ -32,11 +32,12 @@ def store_password(password_name, password):
 def index():
     return render_template('index.html')
 
-@app.route('/generate_password/<password_name>')
-def generate_and_store_password(password_name):
+@app.route('/generate_password', methods=['POST'])
+def generate_and_store_password():
+    password_name = request.form['passwordName']
     password = generate_password()
     store_password(password_name, password)
-    return f'{password_name}: {password}'
+    return render_template('index.html', generated_password=f'{password_name}: {password}')
 
 if __name__ == '__main__':
     app.run(debug=True)
