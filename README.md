@@ -17,6 +17,4 @@ python3 app.py
 
 Then in your web browser go to http://127.0.0.1:5000
 
-Note: In the "Password Name" field input what you want the 
-
-password to be labeled as in the "my_passwords.txt" file.
+Note: In the "Password Name" field input what you want the password to be labeled as in the "my_passwords.txt" file.
