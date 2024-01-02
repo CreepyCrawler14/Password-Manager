@@ -22,11 +22,11 @@ def store_password(password_name, password):
     try:
         with open('my_passwords.txt', 'a') as file:
             file.write(f'{password_name}: {password}\n')
-            print(f'Password stored in my_passwords.txt')
+            return 'Password stored in my_passwords.txt'
     except FileNotFoundError:
         with open('stored_passwords.txt', 'w') as file:
             file.write(f'{password_name}: {password}\n')
-            print(f'Password stored in stored_passwords.txt')
+            return 'Password stored in stored_passwords.txt'
 
 @app.route('/')
 def index():
@@ -36,8 +36,8 @@ def index():
 def generate_and_store_password():
     password_name = request.form['passwordName']
     password = generate_password()
-    store_password(password_name, password)
-    return render_template('index.html', generated_password=f'{password_name}: {password}')
+    store_message = store_password(password_name, password)
+    return render_template('index.html', generated_password=f'{password_name}: {password}', store_message=store_message)
 
 if __name__ == '__main__':
     app.run(debug=True)
