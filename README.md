@@ -16,7 +16,7 @@ apt install pip -y
 
 pip install flask
 
-cd Password-Checker
+cd Password-Manager
 
 python3 app.py
 
